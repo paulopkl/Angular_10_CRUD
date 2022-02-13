@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+tr.active {
+  background-color: rgb(15, 61, 189);
+  color: rgb(255, 255, 255) !important;
+}
+
+i.fa-trash {
+  color: rgb(231, 56, 56);
+  cursor: pointer;
+}
+
+i.fa-trash:hover {
+  color: rgb(192, 24, 24);
+}
+
+i.fa-edit {
+  color: rgb(70, 194, 13);
+  cursor: pointer;
+}
+
+i.fa-edit:hover {
+  color: rgb(29, 167, 11);
+}

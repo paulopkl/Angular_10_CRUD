@@ -1,0 +1,33 @@
+<div style="width: 400px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted"> <!-- If isn't submitted -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          id="title"
+          type="email"
+          class="form-control"
+          required
+          [(ngModel)]="tutorial.title"
+          name="title"
+        >
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input
+          id="description"
+          type="email"
+          class="form-control"
+          [(ngModel)]="tutorial.description"
+          name="description"
+          required
+        >
+      </div>
+      <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted"> <!-- If is submitted -->
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Add More</button>
+    </div>
+  </div>
+</div>

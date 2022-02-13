@@ -1,0 +1,50 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentTutorial" class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          id="title"
+          type="email"
+          class="form-control"
+          required
+          [(ngModel)]="currentTutorial.title"
+          name="title"
+        >
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input
+          id="description"
+          type="email"
+          class="form-control"
+          [(ngModel)]="currentTutorial.description"
+          name="description"
+          required
+        >
+      </div>
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Unpublish" }}
+      </div>
+    </form>
+    <button class="badge badge-primary mr-2" *ngIf="currentTutorial.published" (click)="updatePublished(false)">
+      UnPublish
+    </button>
+    <button *ngIf="!currentTutorial.published" class="badge bg-primary mr-2" (click)="updatePublished(true)">
+      Publish
+    </button>
+    <button class="badge bg-danger mr-2" (click)="deleteTutorial()">
+      Delete
+    </button>
+    <button type="submit" class="badge bg-success" (click)="updateTutorial()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!currentTutorial">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</div>
